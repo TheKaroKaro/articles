@@ -3,9 +3,9 @@
 # Site Settings
 title: "Bread & Letters | Resource Hub"
 description: "High-impact articles and expert insights to upskill your career and scale your business. Covering Excel, Power BI, Automation, Negotiation, Sales, and more."
-url: "https://articles.breadandletters.com" # The base hostname & protocol for your site
+url: "https://articles.breadandletters.com" 
 baseurl: "" 
-timezone: Asia/Kuala_Lumpur # Set your correct timezone
+timezone: Asia/Kuala_Lumpur 
 
 # Build Settings
 markdown: kramdown
@@ -14,18 +14,21 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag 
 
+# FOR GITHUB PAGES COMPATIBILITY: Force Jekyll to process certain files
+include: ["_config.yml", "categories", "assets", "_posts"]
+
 # Navigation/Category Menu
 categories_menu:
   - title: "Productivity & Tech"
-    url: "/productivity-tech/"
+    url: "/productivity-tech/" # Matches the permalink in productivity-tech.md
     slug: "productivity-tech"
     description: "Excel, Power Platform, Automation, Coding"
   - title: "Professional Skills"
-    url: "/professional-skills/"
+    url: "/professional-skills/" # Matches the permalink in professional-skills.md
     slug: "professional-skills"
     description: "Negotiation, Presentation, Sales, Soft Skills"
   - title: "Business Strategy"
-    url: "/business-strategy/"
+    url: "/business-strategy/" # Matches the permalink in business-strategy.md
     slug: "business-strategy"
     description: "Scaling, Growth, Marketing, Finance"
   - title: "About Us"
@@ -39,12 +42,12 @@ social:
   twitter: "https://twitter.com/breadandletters" 
 
 external_sites:
-  academy_url: "https://academy.breadandletters.com" # Online Classes/Training
-  consulting_url: "https://breadandletters.com" # Automation Consultation
+  academy_url: "https://academy.breadandletters.com" 
+  consulting_url: "https://breadandletters.com" 
 
-# Disqus Comments
+# Disqus Comments (Placeholder)
 disqus:
-  shortname: # ADD YOUR DISQUS SHORTNAME HERE
+  shortname: 
 
 # Google Analytics
 google_analytics: G-Z2NN7GLYTT
