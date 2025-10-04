@@ -9,26 +9,35 @@ timezone: Asia/Kuala_Lumpur
 
 # Build Settings
 markdown: kramdown
+# Permalinks: Enforce categories in the URL structure
 permalink: /:categories/:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag 
 
-# FOR GITHUB PAGES COMPATIBILITY: Force Jekyll to process certain files
+# 🚨 CRITICAL FIX FOR GITHUB PAGES 🚨
+# 1. Collections: Define the category pages as a custom collection
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  
+# 2. Force Jekyll to process folders starting with underscores (if applicable)
+# If you kept your category pages in a folder like `_pages` or `categories`
 include: ["_config.yml", "categories", "assets", "_posts"]
 
 # Navigation/Category Menu
 categories_menu:
   - title: "Productivity & Tech"
-    url: "/productivity-tech/" # Matches the permalink in productivity-tech.md
+    url: "/productivity-tech/" 
     slug: "productivity-tech"
     description: "Excel, Power Platform, Automation, Coding"
   - title: "Professional Skills"
-    url: "/professional-skills/" # Matches the permalink in professional-skills.md
+    url: "/professional-skills/" 
     slug: "professional-skills"
     description: "Negotiation, Presentation, Sales, Soft Skills"
   - title: "Business Strategy"
-    url: "/business-strategy/" # Matches the permalink in business-strategy.md
+    url: "/business-strategy/" 
     slug: "business-strategy"
     description: "Scaling, Growth, Marketing, Finance"
   - title: "About Us"
