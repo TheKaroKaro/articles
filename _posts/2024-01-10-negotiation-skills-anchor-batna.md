@@ -7,8 +7,8 @@ categories:
   - professional-skills
   - negotiation-skills
 description: Learn two critical negotiation tactics—Anchoring (setting the first offer) and BATNA (Best Alternative To a Negotiated Agreement)—to secure better outcomes in sales and business.
-thumbnail: /assets/images/articles/negotiation-anchor-header.png 
-image: /assets/images/articles/negotiation-anchor-header.png 
+thumbnail: /assets/images/articles/negotiation-anchor-header.png
+image: /assets/images/articles/negotiation-anchor-header.png
 ---
 
 In every business dealing, from securing a high-value contract to negotiating a salary, the ability to negotiate effectively is paramount. Two concepts stand above the rest in determining success: **Anchoring** and understanding your **BATNA** (Best Alternative To a Negotiated Agreement).
