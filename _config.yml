@@ -1,0 +1,77 @@
+# _config.yml
+
+# Site Settings
+title: "Bread & Letters | Resource Hub"
+description: "High-impact articles and expert insights to upskill your career and scale your business. Covering Excel, Power BI, Automation, Negotiation, Sales, and more."
+url: "https://articles.breadandletters.com" 
+baseurl: "" 
+timezone: Asia/Kuala_Lumpur 
+lang: en-US # Added for better SEO/Accessibility
+
+# Build Settings
+markdown: kramdown
+permalink: /:categories/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap # Added for better SEO
+  
+
+# Configuration Defaults (NEW: Efficiently set layouts/metadata for pages and posts)
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "category"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      author: "Bread & Letters Team" # Default author
+      # Use the first category as the main label by default
+      category_label: "{% assign cat = page.categories | first %}{{ site.categories_menu | where: 'slug', cat | map: 'title' | first }}"
+
+# Collections: Define the category pages as a custom collection
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+    
+# Force Jekyll to process folders starting with underscores (if applicable)
+include: ["categories"] # Only need to explicitly include the category folder
+
+# Navigation/Category Menu
+categories_menu:
+  - title: "Productivity & Tech"
+    url: "/productivity-tech/" 
+    slug: "productivity-tech"
+    description: "Excel, Power Platform, Automation, Coding"
+  - title: "Professional Skills"
+    url: "/professional-skills/" 
+    slug: "professional-skills"
+    description: "Negotiation, Presentation, Sales, Soft Skills"
+  - title: "Business Strategy"
+    url: "/business-strategy/" 
+    slug: "business-strategy"
+    description: "Scaling, Growth, Marketing, Finance"
+  - title: "About Us"
+    url: "/about/"
+    slug: "about"
+    description: "Learn about the team"
+
+# External Links / Social (For traffic driving)
+social:
+  linkedin: "https://www.linkedin.com/company/breadandletters/" 
+  twitter: "https://twitter.com/breadandletters" 
+
+external_sites:
+  academy_url: "https://academy.breadandletters.com" 
+  consulting_url: "https://breadandletters.com" 
+
+# Disqus Comments (Placeholder)
+disqus:
+  shortname: 
+
+# Google Analytics
+google_analytics: G-Z2NN7GLYTT
