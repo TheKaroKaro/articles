@@ -1,20 +1,6 @@
-# Gemfile
-
 source "https://rubygems.org"
-
-# Specify the Ruby version to use
-# This is optional but good practice for consistency
-ruby "3.2.2"
-
-gem "jekyll"
-gem "jekyll-feed"
-gem "jekyll-seo-tag"
-gem "jekyll-sitemap"
-gem "minima"
-
-# Jekyll's default gem
-group :jekyll_plugins do
-  gem "jekyll"
-end
-
-# Add any other gems you need here
+gem "jekyll", "~> 4.3" # or the latest stable version
+gem "github-pages", group: :jekyll_plugins
+# Add all your non-default plugins here
+gem "jekyll-toc"
+gem "kramdown-parser-gfm" # Recommended for better Markdown parsing

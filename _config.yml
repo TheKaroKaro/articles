@@ -15,7 +15,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap # Added for better SEO
-  - jekyll-toc     # Added for Table of Contents
+  
 
 # Configuration Defaults (NEW: Efficiently set layouts/metadata for pages and posts)
 defaults:

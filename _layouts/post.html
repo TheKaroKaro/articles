@@ -12,12 +12,7 @@ layout: default
       <span class="font-medium text-teal-600">{{ page.author | default: 'Bread & Letters Team' }}</span> on <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
     </p>
 
-    {% if page.content contains "<h2>" or page.content contains "<h3>" %}
-      <div class="my-6 p-4 bg-gray-50 border border-gray-200 rounded-lg">
-        <h4 class="font-bold text-lg mb-2">Table of Contents</h4>
-        {% include toc.html html=content %}
-      </div>
-    {% endif %}
+    
 
     {{ content }}
   </div>
