@@ -7,8 +7,8 @@ categories:
   - productivity-tech
   - excel-tips
 description: A deep dive into Excel's conditional functions (SUMIF, COUNTIF, AVERAGEIF) vs. their basic counterparts, including examples, advantages, and limitations for data professionals.
-thumbnail: /assets/images/excel/excel-essentials-thumbnail.png # Placeholder path
-image: /assets/images/excel/excel-essentials-header.png # Placeholder path
+thumbnail: /assets/images/excel/excel-essentials-thumbnail.png 
+image: /assets/images/excel/excel-essentials-header.png 
 ---
 
 Excel remains the backbone of business productivity. While basic functions like `SUM`, `COUNT`, and `AVERAGE` are crucial, true efficiency comes from mastering their conditional counterparts: **`SUMIF`**, **`COUNTIF`**, and **`AVERAGEIF`**.
@@ -68,8 +68,8 @@ $$=SUMIF(A:A, \text{"West"}, B:B)$$
 
 | Advantage | Disadvantage |
 | :--- | :--- |
-| **Conditional Reporting:** Enables powerful filtering for sub-group analysis. | **Single Condition Only:** Can only handle one criterion (e.g., *Region = 'West'*). |
-| **Readability:** Clear, compact formulas that are easier to audit than large pivot tables for simple tasks. | **Complex Nesting:** For multiple criteria (e.g., *Region = 'West' AND Product = 'A'*) you must use the more complex `SUMIFS`, `COUNTIFS`, or `AVERAGEIFS` functions. |
+| **Conditional Reporting:** Enables powerful filtering for sub-group analysis. | **Single Condition Only:** Can only handle one criterion (e.g., *Region = 'West'*). For multiple criteria use **SUMIFS/COUNTIFS/AVERAGEIFS**. |
+| **Readability:** Clear, compact formulas that are easier to audit than large pivot tables for simple tasks. | **Lack of Flexibility:** If the logic becomes complex, pivot tables or advanced formulas are required. |
 
 ## Conclusion
 
