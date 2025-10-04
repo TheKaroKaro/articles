@@ -7,7 +7,7 @@ categories:
   - productivity-tech
   - business-strategy
 description: A comparative analysis of Microsoft Power Automate (low-code/no-code) and VBA (coding) for business process automation, focusing on total cost of ownership (TCO) and return on investment (ROI).
-thumbnail: /assets/images/articles/pa-vs-vba-thumbnail.png 
+thumbnail: /assets/images/articles/pa-vs-vba-header.png 
 image: /assets/images/articles/pa-vs-vba-header.png 
 ---
 
