@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<section class="max-w-6xl mx-auto px-4 pt-16 pb-8">
+    <h1 class="text-4xl md:text-5xl font-bold mb-2 text-gray-900">{{ page.title }} Articles</h1>
+    <p class="text-xl text-gray-700 max-w-4xl mx-auto mb-12">{{ page.description }}</p>
+
+    <div class="bg-blue-50 border-l-4 border-teal-500 p-4 mb-10 rounded-lg">
+        <div class="flex items-center justify-between flex-wrap">
+            <p class="font-medium text-teal-800">
+                Level up your skills. Don't just read about **{{ page.category_label }}**, master them with our structured courses.
+            </p>
+            <a href="{{ site.external_sites.academy_url }}" target="_blank" class="mt-2 sm:mt-0 px-4 py-2 rounded bg-teal-600 text-white text-sm font-medium hover:bg-teal-700 transition duration-300">
+                See Our Courses
+            </a>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% assign category_posts = site.posts | where_exp:"post","post.categories contains page.category_slug" %}
+        {% for post in category_posts %}
+            <a href="{{ post.url | relative_url }}" class="block hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden border">
+                {% if post.thumbnail %}
+                    <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
+                {% endif %}
+                <div class="p-6">
+                    <div class="text-sm text-teal-600 font-medium mb-2">
+                         <span class="inline-block bg-teal-100 text-teal-800 rounded-full px-3 py-1 text-xs font-medium">{{ page.category_label }}</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">{{ post.title }}</h3>
+                    <p class="text-gray-600 text-sm">{{ post.date | date: "%B %-d, %Y" }}</p>
+                    <p class="mt-4 text-gray-700 text-sm">{{ post.description | default: post.excerpt | strip_html | truncatewords: 20 }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+    {% unless category_posts.size > 0 %}
+        <p class="text-center text-gray-500 mt-10">No articles yet in this category. Check back soon!</p>
+    {% endunless %}
+</section>

@@ -1,0 +1,51 @@
+<footer class="bg-gray-800 text-white py-12">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="font-bold text-xl mb-4 flex items-center">
+          <span class="mr-1">🚀</span> {{ site.title | split: " | " | first }}
+        </h3>
+        <p class="text-gray-400 mb-4">{{ site.description | truncatewords: 15 }}</p>
+        <div class="flex gap-3">
+          {% if site.social.linkedin %}
+          <a href="{{ site.social.linkedin }}" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          {% endif %}
+          {% if site.social.twitter %}
+          <a href="{{ site.social.twitter }}" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold mb-4">Categories</h4>
+        <ul class="space-y-2 text-gray-400">
+          {% for item in site.categories_menu limit:3 %}
+            <li><a href="{{ item.url }}" class="hover:text-white">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold mb-4">Important Links</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="{{ site.external_sites.academy_url }}" target="_blank" class="text-teal-400 font-semibold hover:text-teal-300">My Academy (Online Courses)</a></li>
+          <li><a href="{{ site.external_sites.consulting_url }}" target="_blank" class="text-teal-400 font-semibold hover:text-teal-300">Automation Consultation</a></li>
+          <li><a href="{{ site.baseurl }}/about/" class="hover:text-white">About Us</a></li>
+          <li><a href="{{ site.external_sites.consulting_url }}/privacy" target="_blank" class="hover:text-white">Privacy Policy</a></li>
+          <li><a href="{{ site.external_sites.consulting_url }}/terms" target="_blank" class="hover:text-white">Terms of Service</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h4 class="font-semibold mb-4">Contact</h4>
+        <ul class="space-y-2 text-gray-400">
+          <li><a href="{{ site.external_sites.consulting_url }}/contact" target="_blank" class="hover:text-white">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+      <p>© {{ 'now' | date: "%Y" }} {{ site.title | split: " | " | first }}. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

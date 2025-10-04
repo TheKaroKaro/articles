@@ -1,0 +1,48 @@
+# _config.yml
+
+# Site Settings
+title: "Bread & Letters | Resource Hub"
+description: "High-impact articles and expert insights to upskill your career and scale your business. Covering Excel, Power BI, Automation, Negotiation, Sales, and more."
+url: "https://articles.breadandletters.com" # The base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # The subpath of your site, e.g. /blog
+timezone: Asia/Kuala_Lumpur # Set your correct timezone
+
+# Build Settings
+markdown: kramdown
+permalink: /:categories/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag # Important for SEO
+
+# Navigation/Category Menu
+# Changed to professional/business categories
+categories_menu:
+  - title: "Productivity & Tech"
+    url: "/productivity-tech/"
+    description: "Excel, Power Platform, Automation, Coding"
+  - title: "Professional Skills"
+    url: "/professional-skills/"
+    description: "Negotiation, Presentation, Sales, Soft Skills"
+  - title: "Business Strategy"
+    url: "/business-strategy/"
+    description: "Scaling, Growth, Marketing, Finance"
+  - title: "About Us"
+    url: "/about/"
+    description: "Learn about the team"
+
+# External Links / Social
+social:
+  linkedin: "https://www.linkedin.com/company/breadandletters/" # Placeholder, update this
+  twitter: "https://twitter.com/breadandletters" # Placeholder, update this
+
+# External Site URLs for Call-to-Action
+external_sites:
+  academy_url: "https://academy.breadandletters.com" # Online Classes/Training
+  consulting_url: "https://breadandletters.com" # Automation Consultation
+
+# Disqus Comments
+disqus:
+  shortname: # ADD YOUR DISQUS SHORTNAME HERE
+
+# Google Analytics
+google_analytics: G-Z2NN7GLYTT
