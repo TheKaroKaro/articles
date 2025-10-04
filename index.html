@@ -6,49 +6,62 @@ description: High-impact articles and expert insights to upskill your career and
 
 <section class="max-w-6xl mx-auto px-4 pt-16 pb-8">
   <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-center text-gray-900">
-    The Resource Hub
+    The Bread & Letters Resource Hub
   </h1>
   <p class="text-xl text-gray-700 max-w-3xl mx-auto text-center mb-12">
-    Expert insights, tips, and guides to master **Productivity, Professional Skills, and Business Strategy** for ambitious professionals in South East Asia.
+    Expert insights, tips, and guides to master **Productivity, Professional Skills, and Business Strategy** for ambitious professionals.
   </p>
 </section>
 
 <section class="max-w-6xl mx-auto px-4 py-8">
   <div class="bg-teal-600 text-white p-8 rounded-xl shadow-2xl text-center">
-    <h2 class="text-3xl font-bold mb-4">Ready to Master Your Skills?</h2>
+    <h2 class="text-3xl font-bold mb-4">Ready to Accelerate Your Career?</h2>
     <p class="text-lg mb-6 max-w-4xl mx-auto">
-      Go beyond the articles. Accelerate your career with our structured online courses or explore a custom automation solution for your business.
+      Access structured online courses or explore a custom automation solution for your business.
     </p>
     <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
       <a href="{{ site.external_sites.academy_url }}" target="_blank" class="bg-white text-teal-700 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-md">
         Enroll in My Academy 🚀
       </a>
       <a href="{{ site.external_sites.consulting_url }}" target="_blank" class="bg-gray-800 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-700 transition duration-300 shadow-md">
-        Request Automation Consultation
+        Request Consultation
       </a>
     </div>
   </div>
 </section>
 
 <section class="max-w-6xl mx-auto px-4 py-16">
-  <h2 class="text-3xl font-bold mb-8">Latest Articles & Guides</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {% for post in site.posts limit:9 %}
-      <a href="{{ post.url | relative_url }}" class="block hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden border">
-        {% if post.thumbnail %}
-          <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
-        {% endif %}
-        <div class="p-6">
-          <div class="text-sm text-teal-600 font-medium mb-2">
-            {% for category in post.categories limit:1 %}
-              <span class="inline-block bg-teal-100 text-teal-800 rounded-full px-3 py-1 text-xs font-medium">{{ category | replace: "-", " " | capitalize }}</span>
-            {% endfor %}
-          </div>
-          <h3 class="text-xl font-bold mb-2">{{ post.title }}</h3>
-          <p class="text-gray-600 text-sm">{{ post.date | date: "%B %-d, %Y" }}</p>
-          <p class="mt-4 text-gray-700 text-sm">{{ post.description | default: post.excerpt | strip_html | truncatewords: 20 }}</p>
-        </div>
-      </a>
-    {% endfor %}
-  </div>
+  {% for category_item in site.categories_menu limit:3 %}
+    {% assign current_category_slug = category_item.url | replace: "/", "" | replace: "-", " " %}
+    {% assign featured_posts = site.posts | where_exp:"post","post.categories contains current_category_slug" | sort: 'date' | reverse | limit: 3 %}
+    
+    <div class="mb-16">
+      <div class="flex items-center justify-between mb-8 border-b pb-2">
+        <h2 class="text-3xl font-bold text-gray-800">{{ category_item.title }}</h2>
+        <a href="{{ category_item.url }}" class="text-teal-600 font-medium hover:text-teal-800 flex items-center">
+          See All {{ category_item.title }} <i class="fas fa-arrow-right ml-2 text-sm"></i>
+        </a>
+      </div>
+      
+      {% if featured_posts.size > 0 %}
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for post in featured_posts %}
+          <a href="{{ post.url | relative_url }}" class="block hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden border">
+            {% if post.thumbnail %}
+              <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
+            {% endif %}
+            <div class="p-6">
+              <span class="inline-block bg-teal-100 text-teal-800 rounded-full px-3 py-1 text-xs font-medium mb-3">{{ category_item.title }}</span>
+              <h3 class="text-xl font-bold mb-2">{{ post.title }}</h3>
+              <p class="text-gray-600 text-sm mb-4">{{ post.date | date: "%B %-d, %Y" }}</p>
+              <p class="mt-2 text-gray-700 text-sm">{{ post.description | default: post.excerpt | strip_html | truncatewords: 18 }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+      {% else %}
+        <p class="text-center text-gray-500 py-6">More articles coming soon!</p>
+      {% endif %}
+    </div>
+  {% endfor %}
 </section>

@@ -3,8 +3,8 @@
 # Site Settings
 title: "Bread & Letters | Resource Hub"
 description: "High-impact articles and expert insights to upskill your career and scale your business. Covering Excel, Power BI, Automation, Negotiation, Sales, and more."
-url: "https://articles.breadandletters.com" # The base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # The subpath of your site, e.g. /blog
+url: "https://articles.breadandletters.com" # The base hostname & protocol for your site
+baseurl: "" 
 timezone: Asia/Kuala_Lumpur # Set your correct timezone
 
 # Build Settings
@@ -12,30 +12,32 @@ markdown: kramdown
 permalink: /:categories/:title/
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag # Important for SEO
+  - jekyll-seo-tag 
 
 # Navigation/Category Menu
-# Changed to professional/business categories
 categories_menu:
   - title: "Productivity & Tech"
     url: "/productivity-tech/"
+    slug: "productivity-tech"
     description: "Excel, Power Platform, Automation, Coding"
   - title: "Professional Skills"
     url: "/professional-skills/"
+    slug: "professional-skills"
     description: "Negotiation, Presentation, Sales, Soft Skills"
   - title: "Business Strategy"
     url: "/business-strategy/"
+    slug: "business-strategy"
     description: "Scaling, Growth, Marketing, Finance"
   - title: "About Us"
     url: "/about/"
+    slug: "about"
     description: "Learn about the team"
 
-# External Links / Social
+# External Links / Social (For traffic driving)
 social:
-  linkedin: "https://www.linkedin.com/company/breadandletters/" # Placeholder, update this
-  twitter: "https://twitter.com/breadandletters" # Placeholder, update this
+  linkedin: "https://www.linkedin.com/company/breadandletters/" 
+  twitter: "https://twitter.com/breadandletters" 
 
-# External Site URLs for Call-to-Action
 external_sites:
   academy_url: "https://academy.breadandletters.com" # Online Classes/Training
   consulting_url: "https://breadandletters.com" # Automation Consultation
