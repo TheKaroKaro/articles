@@ -20,7 +20,7 @@ layout: default
         {% assign category_posts = site.posts | where_exp:"post","post.categories contains page.category_slug" | sort: 'date' | reverse %}
         
         {% for post in category_posts %}
-            {% include post_card.html post=post category_title:page.category_label %}
+            {% include post_card.html post=post category_title=page.category_label %}
         {% endfor %}
     </div>
 

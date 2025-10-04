@@ -2,7 +2,7 @@
 layout: post
 title: High-Impact Negotiation - The Power of Anchoring and BATNA
 author: Guest Contributor
-date: 2025-10-10 11:30:00 +0800
+date: 2024-10-10 11:30:00 +0800
 categories:
   - professional-skills
   - negotiation-skills

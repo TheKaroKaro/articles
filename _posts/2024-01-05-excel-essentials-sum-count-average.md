@@ -2,7 +2,7 @@
 layout: post
 title: Excel Essentials - Mastering SUMIF, COUNTIF, and AVERAGEIF for Data Analysis
 author: Jefri Karo Karo
-date: 2025-10-05 10:00:00 +0800
+date: 2024-10-05 10:00:00 +0800
 categories:
   - productivity-tech
   - excel-tips

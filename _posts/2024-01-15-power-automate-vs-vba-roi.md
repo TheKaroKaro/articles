@@ -2,7 +2,7 @@
 layout: post
 title: Power Automate vs. VBA - Choosing the Right Automation for Your Business ROI
 author: Jefri Karo Karo
-date: 2025-10-15 14:00:00 +0800
+date: 2024-10-15 14:00:00 +0800
 categories:
   - productivity-tech
   - business-strategy
