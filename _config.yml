@@ -6,25 +6,40 @@ description: "High-impact articles and expert insights to upskill your career an
 url: "https://articles.breadandletters.com" 
 baseurl: "" 
 timezone: Asia/Kuala_Lumpur 
+lang: en-US # Added for better SEO/Accessibility
 
 # Build Settings
 markdown: kramdown
-# Permalinks: Enforce categories in the URL structure
 permalink: /:categories/:title/
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag 
+  - jekyll-seo-tag
+  - jekyll-sitemap # Added for better SEO
+  - jekyll-toc     # Added for Table of Contents
 
-# 🚨 CRITICAL FIX FOR GITHUB PAGES 🚨
-# 1. Collections: Define the category pages as a custom collection
+# Configuration Defaults (NEW: Efficiently set layouts/metadata for pages and posts)
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "category"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      author: "Bread & Letters Team" # Default author
+      # Use the first category as the main label by default
+      category_label: "{% assign cat = page.categories | first %}{{ site.categories_menu | where: 'slug', cat | map: 'title' | first }}"
+
+# Collections: Define the category pages as a custom collection
 collections:
   pages:
     output: true
     permalink: /:path/
-  
-# 2. Force Jekyll to process folders starting with underscores (if applicable)
-# If you kept your category pages in a folder like `_pages` or `categories`
-include: ["_config.yml", "categories", "assets", "_posts"]
+    
+# Force Jekyll to process folders starting with underscores (if applicable)
+include: ["categories"] # Only need to explicitly include the category folder
 
 # Navigation/Category Menu
 categories_menu:

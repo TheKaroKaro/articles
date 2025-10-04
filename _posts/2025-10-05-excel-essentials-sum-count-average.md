@@ -7,8 +7,9 @@ categories:
   - productivity-tech
   - excel-tips
 description: A deep dive into Excel's conditional functions (SUMIF, COUNTIF, AVERAGEIF) vs. their basic counterparts, including examples, advantages, and limitations for data professionals.
-thumbnail: /assets/images/excel/excel-essentials-thumbnail.png 
-image: /assets/images/excel/excel-essentials-header.png 
+thumbnail: /assets/images/excel/excel-essentials-thumbnail.png
+image: /assets/images/excel/excel-essentials-header.png
+featured: true # <--- ADDED THIS FLAG
 ---
 
 Excel remains the backbone of business productivity. While basic functions like `SUM`, `COUNT`, and `AVERAGE` are crucial, true efficiency comes from mastering their conditional counterparts: **`SUMIF`**, **`COUNTIF`**, and **`AVERAGEIF`**.
