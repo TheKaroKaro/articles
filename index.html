@@ -4,36 +4,11 @@ title: Home
 description: High-impact articles and expert insights to upskill your career and scale your business.
 ---
 
-<section class="max-w-6xl mx-auto px-4 pt-16 pb-8">
-  <h1 class="text-4xl md:text-6xl font-extrabold mb-4 text-center text-gray-900">
-    The Bread & Letters Resource Hub
-  </h1>
-  <p class="text-xl text-gray-700 max-w-3xl mx-auto text-center mb-12">
-    Expert insights, tips, and guides to master **Productivity, Professional Skills, and Business Strategy** for ambitious professionals.
-  </p>
-</section>
-
-<section class="max-w-6xl mx-auto px-4 py-8">
-  <div class="bg-teal-600 text-white p-8 rounded-xl shadow-2xl text-center">
-    <h2 class="text-3xl font-bold mb-4">Ready to Accelerate Your Career?</h2>
-    <p class="text-lg mb-6 max-w-4xl mx-auto">
-      Access structured online courses or explore a custom automation solution for your business.
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-      <a href="{{ site.external_sites.academy_url }}" target="_blank" class="bg-white text-teal-700 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-md">
-        Enroll in My Academy 🚀
-      </a>
-      <a href="{{ site.external_sites.consulting_url }}" target="_blank" class="bg-gray-800 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-700 transition duration-300 shadow-md">
-        Request Consultation
-      </a>
-    </div>
-  </div>
-</section>
-
 <section class="max-w-6xl mx-auto px-4 py-16">
   {% for category_item in site.categories_menu limit:3 %}
     {% assign current_category_slug = category_item.slug %} 
-    {% assign featured_posts = site.posts | where_exp:"post","post.categories contains current_category_slug" | sort: 'date' | reverse | limit: 3 %}
+    
+    {% assign featured_posts = site.categories[current_category_slug] | sort: 'date' | reverse | limit: 3 %}
     
     <div class="mb-16">
       <div class="flex items-center justify-between mb-8 border-b pb-2">
